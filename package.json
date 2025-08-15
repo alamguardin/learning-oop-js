@@ -1,0 +1,17 @@
+{
+  "name": "learning-oop-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.14.0",
+  "devDependencies": {
+    "@biomejs/biome": "2.2.0",
+    "vitest": "^3.2.4"
+  }
+}
