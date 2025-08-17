@@ -26,3 +26,12 @@ test('Debería lanzar un error al intentar depositar un valor en cero o negativo
 	const depositState = account.deposit(0);
 	expect(depositState).toBe('Error');
 });
+
+test('No debería poder realizar un retiro mayor al disponible', () => {
+	const account = new BankAccount('Jhon');
+
+	account.deposit(250);
+
+	const withdrawState = account.withdraw(300);
+	expect(withdrawState).toBe('Error');
+});

@@ -28,7 +28,17 @@ export class BankAccount {
 	}
 
 	withdraw(amount) {
-		//
+		try {
+			if (amount === 0) throw new Error('No cumple la cantidad minima');
+			if (amount > this.#balance)
+				throw new Error('Cantidad no disponible en el balance actual');
+
+			this.#balance = this.#balance - amount;
+			return 'Succesfully';
+		} catch (error) {
+			console.log(error);
+			return 'Error';
+		}
 	}
 
 	getRecord() {
