@@ -19,3 +19,10 @@ test('Realizar deposito: Debería actualizarce al balance actual', () => {
 	account.deposit(100);
 	expect(account.getBalance()).toBe(100);
 });
+
+test('Debería lanzar un error al intentar depositar un valor en cero o negativo', () => {
+	const account = new BankAccount('Jhon');
+
+	const depositState = account.deposit(0);
+	expect(depositState).toBe('Error');
+});

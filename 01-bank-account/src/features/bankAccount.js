@@ -20,9 +20,10 @@ export class BankAccount {
 			if (amount <= 0) throw new Error('No cumple la cantidad minima');
 
 			this.#balance += amount;
-			return 'succesfully';
+			return 'Succesfully';
 		} catch (error) {
 			console.log(error);
+			return 'Error';
 		}
 	}
 
