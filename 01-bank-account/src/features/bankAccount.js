@@ -2,10 +2,19 @@ export class BankAccount {
 	#balance = 0;
 	#record = [];
 
+	/**
+	 * Constructor de nuestra clase
+	 * @param {string} owner - Nombre del propietario
+	 */
 	constructor(owner) {
 		this.owner = owner;
 	}
 
+	/**
+	 * Actualizar historial de movimientos
+	 * @param {string} type - Tipo de transacción
+	 * @param {number} amount - Cantidad del deposito|Retiro
+	 */
 	#updateRecord(type, amount) {
 		this.#record.push({
 			type: type,
@@ -13,14 +22,18 @@ export class BankAccount {
 		});
 	}
 
+	/**
+	 * Obtener balance actual de la cuanta
+	 * @returns {number} Balance actual
+	 */
 	getBalance() {
 		return this.#balance;
 	}
 
 	/**
-	 * Metodo para realizar depositos al balance
+	 * Realizar depositos al balance actual
 	 * @param {number} amount - Cantidad a depositar
-	 * @returns
+	 * @returns {string} Estado de la transacción
 	 */
 	deposit(amount) {
 		try {
@@ -35,6 +48,11 @@ export class BankAccount {
 		}
 	}
 
+	/**
+	 * Realizar retiros al balance actual
+	 * @param {number} amount - Cantidad a retirar
+	 * @returns {string} Estado de la transacción
+	 */
 	withdraw(amount) {
 		try {
 			if (amount === 0) throw new Error('No cumple la cantidad minima');
@@ -50,6 +68,10 @@ export class BankAccount {
 		}
 	}
 
+	/**
+	 * Obtener una lista del historial de movimientos
+	 * @returns {Object[]} Arreglo de movimientos
+	 */
 	getRecord() {
 		return this.#record;
 	}
