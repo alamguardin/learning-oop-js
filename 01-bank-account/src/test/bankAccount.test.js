@@ -44,3 +44,19 @@ test('Realizar retiro: debería actualizarce el balance actual', () => {
 
 	expect(account.getBalance()).toBe(100);
 });
+
+test('Comprobar que se actualize el historial después de cada movimiento', () => {
+	const account = new BankAccount('Jhon');
+
+	account.deposit(150);
+	account.withdraw(100);
+	account.deposit(30);
+
+	const currentRecord = account.getRecord();
+
+	expect(currentRecord.length).toBe(3);
+	expect(currentRecord[0].type).toBe('deposit');
+	expect(currentRecord[0].amount).toBe(150);
+	expect(currentRecord[1].type).toBe('withdraw');
+	expect(currentRecord[1].amount).toBe(100);
+});
