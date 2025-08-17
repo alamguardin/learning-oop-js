@@ -35,3 +35,12 @@ test('No debería poder realizar un retiro mayor al disponible', () => {
 	const withdrawState = account.withdraw(300);
 	expect(withdrawState).toBe('Error');
 });
+
+test('Realizar retiro: debería actualizarce el balance actual', () => {
+	const account = new BankAccount('Jhon');
+
+	account.deposit(200);
+	account.withdraw(100);
+
+	expect(account.getBalance()).toBe(100);
+});
