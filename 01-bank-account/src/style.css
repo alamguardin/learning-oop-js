@@ -159,4 +159,9 @@
 	display: flex;
 	justify-content: space-between;
 	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.list-item.dark {
+	color: var(--secundary-text);
 }
