@@ -25,6 +25,11 @@
 			"semicolons": "always"
 		}
 	},
+	"html": {
+		"formatter": {
+			"enabled": true
+		}
+	},
 	"assist": {
 		"enabled": true,
 		"actions": {
